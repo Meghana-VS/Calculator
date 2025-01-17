@@ -61,7 +61,7 @@ public class Calculator implements ActionListener{
 
         panel = new JPanel();
         panel.setBounds(50,100,300,300);
-        panel.setLayout(new GridLayout(4,4,10,10));
+        panel.setLayout(new GridLayout(4,4,15,15));
 //        panel.setBackground(Color.GRAY);
         panel.add(numberedButtons[1]);
         panel.add(numberedButtons[2]);
@@ -135,7 +135,7 @@ public class Calculator implements ActionListener{
                     result = num1 * num2;
                     break;
                 case '/':
-                    result = num1 / num2;
+                    result = (num2 != 0) ? num1 / num2 : Double.NaN;
                     break;
             }
             textField.setText(String.valueOf(result));
